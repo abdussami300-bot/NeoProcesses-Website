@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64" fill="none">
+  <defs>
+    <linearGradient id="neoGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0A192F" />
+      <stop offset="50%" stop-color="#0369A1" />
+      <stop offset="100%" stop-color="#0EA5E9" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Symbol (scaled to 54x54, offset x=5, y=5) -->
+  <g transform="translate(4, 5) scale(0.27)">
+    <path d="M 45 155 V 45 H 63 V 155 Z" fill="#0A192F" />
+    <path d="M 52 48 L 118 135 C 132 153 158 153 172 138 C 185 124 185 101 172 87 C 158 72 133 72 118 89 L 105 104 L 92 88 L 108 70 C 131 46 168 46 191 68 C 213 89 213 125 191 148 C 168 171 130 170 106 142 L 52 70 V 48 Z" fill="url(#neoGradient)" />
+  </g>
+
+  <!-- Wordmark -->
+  <text x="68" y="34" font-family="'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.5">
+    <tspan fill="#0A192F">Neo</tspan><tspan fill="#0284C7" font-weight="700">Processes</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="69" y="49" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="7.5" font-weight="700" fill="#64748B" letter-spacing="1.6">
+    YOUR BUSINESS. OUR SOLUTION.
+  </text>
+</svg>

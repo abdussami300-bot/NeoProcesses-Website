@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="neoGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0A192F" />
+      <stop offset="50%" stop-color="#0369A1" />
+      <stop offset="100%" stop-color="#0EA5E9" />
+    </linearGradient>
+    <linearGradient id="accentTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0EA5E9" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+  </defs>
+
+  <!-- NeoProcesses Geometric Continuous Flow Mark -->
+  <!-- Left Vertical Stem of N -->
+  <path d="M 45 155 V 45 H 63 V 155 Z" fill="#0A192F" />
+  
+  <!-- Dynamic Diagonal & Continuous Process Loop -->
+  <!-- Diagonal bridge extending across and looping around smoothly -->
+  <path d="M 52 48 L 118 135 C 132 153 158 153 172 138 C 185 124 185 101 172 87 C 158 72 133 72 118 89 L 105 104 L 92 88 L 108 70 C 131 46 168 46 191 68 C 213 89 213 125 191 148 C 168 171 130 170 106 142 L 52 70 V 48 Z" 
+        fill="url(#neoGradient)" />
+</svg>
