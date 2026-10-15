@@ -1,6 +1,7 @@
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton';
 import { assetPath } from '@/utils/asset-path';
 
 export const metadata = {
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <WhatsAppFloatingButton />
       </body>
     </html>
   );

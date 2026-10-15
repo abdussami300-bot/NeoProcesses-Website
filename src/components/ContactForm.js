@@ -66,7 +66,7 @@ export default function ContactForm({ preselectedService = '' }) {
   // Structured inquiry message for WhatsApp and Mail
   const formattedInquiry = `Hello NeoProcesses,%0A%0A*Name:* ${encodeURIComponent(formData.fullName)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Business:* ${encodeURIComponent(formData.businessName || 'N/A')}%0A*Service:* ${encodeURIComponent(formData.service)}%0A%0A*Project Description:*%0A${encodeURIComponent(formData.description)}`;
 
-  const whatsappUrl = `https://wa.me/923410118690?text=${formattedInquiry}`;
+  const whatsappUrl = `https://wa.me/923265635826?text=${formattedInquiry}`;
   const mailtoUrl = `mailto:abdussami039@gmail.com?subject=${encodeURIComponent(`Project Inquiry - ${formData.service} (${formData.fullName})`)}&body=${encodeURIComponent(`Name: ${formData.fullName}\nEmail: ${formData.email}\nBusiness: ${formData.businessName || 'N/A'}\nService: ${formData.service}\n\nProject Description:\n${formData.description}`)}`;
 
   if (isSuccess) {

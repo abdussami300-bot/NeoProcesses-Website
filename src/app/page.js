@@ -333,12 +333,12 @@ export default function HomePage() {
                 Get in Touch
               </Link>
               <a
-                href="https://wa.me/923410118690"
+                href="https://wa.me/923265635826"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline-white btn-cta"
               >
-                Chat on WhatsApp (+92 341 0118690)
+                Chat on WhatsApp (+92 326 5635826)
               </a>
             </div>
           </div>

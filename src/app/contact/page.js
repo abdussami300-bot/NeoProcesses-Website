@@ -51,7 +51,7 @@ export default function ContactPage() {
                 <div className="direct-channel-list">
                   {/* WhatsApp Channel */}
                   <a
-                    href="https://wa.me/923410118690"
+                    href="https://wa.me/923265635826"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="channel-item whatsapp-channel"
@@ -63,7 +63,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="channel-title">WhatsApp Direct Chat</div>
-                      <div className="channel-value">+92 341 0118690</div>
+                      <div className="channel-value">+92 326 5635826</div>
                       <span className="channel-hint">Instant messaging & voice notes</span>
                     </div>
                   </a>
