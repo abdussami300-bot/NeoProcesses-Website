@@ -6,18 +6,20 @@ import { assetPath } from '@/utils/asset-path';
 
 export const metadata = {
   metadataBase: new URL('https://neoprocesses.com'),
-  title: 'NeoProcesses | Software & Digital Solutions',
+  title: 'NeoProcesses | Custom Software. Built Around Your Business.',
   description:
-    'NeoProcesses builds practical websites, mobile applications, business management systems, and tailored digital workflows for growing businesses.',
+    'We turn business challenges into practical digital solutions — from professional websites to custom POS and management systems.',
   keywords: [
     'NeoProcesses',
-    'Software Development',
+    'Custom Software Development',
+    'POS Systems',
+    'Business Management Systems',
+    'Order Management Systems',
     'Mobile Application Development',
     'Flutter Development',
-    'Next.js Website',
-    'Business Management Systems',
-    'Custom Software Solutions',
-    'Web Development Islamabad',
+    'Next.js Web Applications',
+    'Software Company Islamabad',
+    'Pakistan Software Development',
   ],
   authors: [{ name: 'NeoProcesses' }],
   icons: {
@@ -26,9 +28,9 @@ export const metadata = {
     apple: assetPath('/favicon.svg'),
   },
   openGraph: {
-    title: 'NeoProcesses | Your Business. Our Solution.',
+    title: 'NeoProcesses | Custom Software. Built Around Your Business.',
     description:
-      'Practical digital solutions for businesses that want to work smarter, serve customers better, and grow with confidence.',
+      'We turn business challenges into practical digital solutions — from professional websites to custom POS and management systems.',
     url: 'https://neoprocesses.com',
     siteName: 'NeoProcesses',
     images: [

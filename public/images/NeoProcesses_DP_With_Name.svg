@@ -1,0 +1,41 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050C18" />
+      <stop offset="50%" stop-color="#09182E" />
+      <stop offset="100%" stop-color="#02060E" />
+    </linearGradient>
+    <radialGradient id="glow2" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="neoGradientDark2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="50%" stop-color="#0EA5E9" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="24" flood-color="#0EA5E9" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bgGrad2)" />
+  <circle cx="512" cy="400" r="420" fill="url(#glow2)" />
+
+  <!-- Symbol perfectly centered horizontally -->
+  <g transform="translate(177, 120) scale(2.6)" filter="url(#glowFilter)">
+    <path d="M 45 155 V 45 H 63 V 155 Z" fill="#FFFFFF" />
+    <path d="M 52 48 L 118 135 C 132 153 158 153 172 138 C 185 124 185 101 172 87 C 158 72 133 72 118 89 L 105 104 L 92 88 L 108 70 C 131 46 168 46 191 68 C 213 89 213 125 191 148 C 168 171 130 170 106 142 L 52 70 V 48 Z" fill="url(#neoGradientDark2)" />
+  </g>
+
+  <!-- Wordmark -->
+  <text x="512" y="700" text-anchor="middle" font-family="'Space Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="82" font-weight="800" letter-spacing="-1">
+    <tspan fill="#FFFFFF">Neo</tspan><tspan fill="#38BDF8">Processes</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="512" y="760" text-anchor="middle" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#94A3B8" letter-spacing="5">
+    YOUR BUSINESS. OUR SOLUTION.
+  </text>
+</svg>

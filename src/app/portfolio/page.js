@@ -11,10 +11,13 @@ export default function PortfolioPage() {
       id: 'sayyarah',
       title: 'SAYYARAH — Car Rental Marketplace',
       category: 'Mobile Platform & Web Admin',
-      badge: 'Production-Tested Marketplace',
+      badge: 'Production-Tested Platform',
       type: 'Mobile',
-      description:
-        'A full-featured peer-to-peer car rental platform built for Islamabad/Rawalpindi. Features comprehensive vehicle listings, real-time booking requests, digital vehicle handover & return inspection documentation with photo verification, immutable CNIC security rules, and a dedicated Next.js operational admin console.',
+      isAcademic: false,
+      problem:
+        'Fragmented, paper-based car rental coordination in Pakistan lacking verified customer/host roles, real-time booking lifecycle, and tamper-proof vehicle condition records.',
+      solution:
+        'Architected a peer-to-peer car rental platform featuring comprehensive vehicle listings, role separation (Customer, Host, Admin), photographic pre-trip/return inspection logging, immutable Firestore security rules, and a dedicated Next.js operational web admin console.',
       technologies: ['Flutter', 'Dart', 'Firebase Auth', 'Firestore', 'Firebase Storage', 'Next.js', 'React'],
       image: '/projects/sayyarah-browse.jpg',
       github: 'https://github.com/abdussami300-bot/Car-Rental-app',
@@ -33,8 +36,11 @@ export default function PortfolioPage() {
       category: 'Operations Management App',
       badge: 'Academic Project',
       type: 'Mobile',
-      description:
-        'A practical mobile application developed for laundry business intake, order progress monitoring, and customer service tracking. Designed to replace paper receipts with a clear digital order lifecycle.',
+      isAcademic: true,
+      problem:
+        'Manual garment intake slips lead to lost customer items, confusion between wash/dry/iron stages, and untracked pickup/delivery schedules in daily laundry businesses.',
+      solution:
+        'Developed a streamlined mobile workflow application for laundry business intake, service tracking (Wash, Dry, Steam Iron), order progress stages, itemized order cost calculation, and customer handover records.',
       technologies: ['Flutter', 'Dart', 'State Management', 'Clean Architecture', 'Mobile UI'],
       image: '/projects/laundry-dashboard.jpg',
       github: null,
@@ -53,8 +59,11 @@ export default function PortfolioPage() {
       category: 'Corporate B2B Website',
       badge: 'Saudi Commercial Supplier',
       type: 'Web',
-      description:
-        'A clean corporate B2B website engineered for a commercial supply partner operating in the Eastern Province of Saudi Arabia. Presents product ranges, commercial sanitation supplies, and corporate supplier information.',
+      isAcademic: false,
+      problem:
+        'A commercial B2B procurement and supply business operating in Saudi Arabia required an authoritative corporate web presence to showcase industrial disposables and food supplies to institutional buyers.',
+      solution:
+        'Engineered a fast, lightweight corporate website presenting company credentials, product categories (sanitation, industrial consumables, food items), and direct procurement inquiry channels with zero template bloat.',
       technologies: ['HTML5', 'Semantic CSS3', 'JavaScript', 'Responsive Typography', 'SEO Optimization'],
       image: '/projects/rowan-preview.jpg',
       github: null,
@@ -81,7 +90,7 @@ export default function PortfolioPage() {
       {/* Header */}
       <section className="page-header-section">
         <div className="container">
-          <span className="section-tag">Case Studies & Code</span>
+          <span className="badge-pill-cyan">Demonstrated Technical Capability</span>
           <h1 className="page-title">Genuine Projects Built with Real Code</h1>
           <p className="page-lead">
             Every project listed here is an authentic application or website built by
@@ -106,9 +115,9 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="section-py">
+      <section className="section-padding bg-section-darker">
         <div className="container">
-          <div className="grid-3 portfolio-grid">
+          <div className="projects-grid-3">
             {filteredProjects.map((proj) => (
               <ProjectCard key={proj.id} project={proj} />
             ))}
@@ -117,39 +126,47 @@ export default function PortfolioPage() {
       </section>
 
       {/* Technical Standards Section */}
-      <section className="section-py bg-subtle-section">
+      <section className="section-padding bg-section-void">
         <div className="container">
-          <div className="section-header-centered">
-            <span className="section-tag">Engineering Quality</span>
-            <h2 className="section-title">How We Build Every Project</h2>
-            <p className="section-desc">
+          <div className="section-title-wrapper text-center">
+            <span className="badge-pill-cyan">Engineering Quality</span>
+            <h2 className="section-headline">How We Build Every Project</h2>
+            <p className="section-subheadline">
               Whether building an enterprise admin tool or a business website,
               we enforce consistent quality standards across the stack.
             </p>
           </div>
 
-          <div className="grid-3 standards-grid">
-            <div className="standard-card card-base">
-              <div className="standard-icon">01</div>
-              <h3 className="standard-title">Real Device Validation</h3>
-              <p className="standard-desc">
+          <div className="process-timeline-grid">
+            <div className="process-card card-dark-elevated">
+              <div className="badge-num">01</div>
+              <h3 className="stage-title">Real Device Validation</h3>
+              <p className="stage-desc">
                 We test responsive layouts and touch interactions directly on physical Android and iOS devices, ensuring smooth scrolling and zero visual overflow.
               </p>
             </div>
 
-            <div className="standard-card card-base">
-              <div className="standard-icon">02</div>
-              <h3 className="standard-title">Security by Architecture</h3>
-              <p className="standard-desc">
+            <div className="process-card card-dark-elevated">
+              <div className="badge-num">02</div>
+              <h3 className="stage-title">Security by Architecture</h3>
+              <p className="stage-desc">
                 We configure strict database security rules and access control policies so client data cannot be modified or inspected by unauthorized parties.
               </p>
             </div>
 
-            <div className="standard-card card-base">
-              <div className="standard-icon">03</div>
-              <h3 className="standard-title">Zero Dependency Bloat</h3>
-              <p className="standard-desc">
+            <div className="process-card card-dark-elevated">
+              <div className="badge-num">03</div>
+              <h3 className="stage-title">Zero Dependency Bloat</h3>
+              <p className="stage-desc">
                 We avoid installing third-party libraries for trivial UI effects. Clean, standard code ensures your project stays fast, stable, and easily maintainable.
+              </p>
+            </div>
+
+            <div className="process-card card-dark-elevated">
+              <div className="badge-num">04</div>
+              <h3 className="stage-title">Direct Handover &amp; Support</h3>
+              <p className="stage-desc">
+                Every project concludes with clear operational documentation, deployment handover, and direct assistance to ensure smooth daily adoption.
               </p>
             </div>
           </div>

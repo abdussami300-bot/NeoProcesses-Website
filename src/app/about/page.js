@@ -11,7 +11,7 @@ export default function AboutPage() {
   const values = [
     {
       title: 'Clarity Over Complexity',
-      desc: 'We do not build complicated architectures just for the sake of it. We choose the simplest, most dependable solution that solves your exact problem.',
+      desc: 'We do not build complicated architectures just for the sake of it. We choose the simplest, most dependable solution that solves your exact operational bottleneck.',
     },
     {
       title: 'Real Usability',
@@ -32,47 +32,49 @@ export default function AboutPage() {
       {/* Page Header */}
       <section className="page-header-section">
         <div className="container">
-          <span className="section-tag">About NeoProcesses</span>
-          <h1 className="page-title">Engineering Software Built for Actual Business Operations</h1>
+          <span className="badge-pill-cyan">About NeoProcesses</span>
+          <h1 className="page-title">Custom Software. Built Around Your Business.</h1>
           <p className="page-lead">
-            We are a software development and digital solutions studio focused on
-            turning operational challenges into clean, dependable web and mobile applications.
+            We are a custom software development studio turning everyday operational challenges
+            into practical digital solutions — from professional websites to custom POS and management systems.
           </p>
         </div>
       </section>
 
       {/* Main Story & Purpose */}
-      <section className="section-py">
+      <section className="section-padding bg-section-darker">
         <div className="container story-container">
           <div className="story-grid">
             <div className="story-text">
-              <span className="section-tag">Our Purpose</span>
-              <h2 className="story-heading">Practical Systems, Not Over-Engineered Promises</h2>
+              <span className="badge-pill-cyan">Our Purpose</span>
+              <h2 className="section-headline" style={{ textAlign: 'left', marginBottom: '20px' }}>
+                Practical Systems, Not Over-Engineered Promises
+              </h2>
               
-              <p>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '16px' }}>
                 Many small and medium-sized businesses struggle with software that is either
                 overly rigid, needlessly complex, or disconnected from how the business actually
                 operates. Off-the-shelf tools often force teams into awkward workarounds, while
                 traditional agency engagements frequently drown in buzzwords and bloated budgets.
               </p>
 
-              <p>
-                <strong>NeoProcesses</strong> was established with a straightforward mission:
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '16px' }}>
+                <strong style={{ color: 'var(--cyan-primary)' }}>NeoProcesses</strong> was established with a straightforward mission:
                 to bridge the gap between real business workflows and modern digital technology.
                 We specialize in creating practical mobile applications, business management systems,
                 corporate websites, and custom tools that work reliably day in and day out.
               </p>
 
-              <p>
-                Whether it is building an end-to-end marketplace platform with Flutter and Firebase,
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '0' }}>
+                Whether it is building an end-to-end car rental marketplace with Flutter and Firebase,
                 organizing manual orders into a streamlined tracking dashboard, or building a high-speed
-                B2B corporate web presence, we focus on what creates genuine value for your business.
+                B2B corporate web presence, we focus on what creates genuine, durable value for your business.
               </p>
             </div>
 
             <div className="story-card-wrapper">
-              <div className="about-brand-card card-base">
-                <div className="brand-card-header">
+              <div className="about-brand-card card-dark-elevated">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <img
                     src={assetPath('/images/neoprocesses_symbol.svg')}
                     alt="NeoProcesses Symbol"
@@ -81,35 +83,31 @@ export default function AboutPage() {
                     className="about-symbol"
                   />
                   <div>
-                    <h3 className="brand-card-title">NeoProcesses</h3>
-                    <p className="brand-card-tagline">Your Business. Our Solution.</p>
+                    <h3 style={{ fontSize: '1.3rem', color: 'var(--text-white)', fontWeight: '800' }}>NeoProcesses</h3>
+                    <p style={{ fontSize: '0.82rem', color: 'var(--cyan-primary)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Custom Software Development</p>
                   </div>
                 </div>
 
-                <div className="focus-list">
-                  <div className="focus-item">
-                    <span className="focus-label">Core Philosophy</span>
-                    <span className="focus-value">Pragmatic Software Engineering</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '24px' }}>
+                  <div style={{ background: 'var(--bg-surface)', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-subtle)' }}>
+                    <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: '700' }}>Core Philosophy</span>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-white)', fontWeight: '600' }}>Pragmatic Software Engineering</span>
                   </div>
-                  <div className="focus-item">
-                    <span className="focus-label">Primary Stack</span>
-                    <span className="focus-value">Flutter, Dart, Next.js, Firebase, React</span>
+                  <div style={{ background: 'var(--bg-surface)', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-subtle)' }}>
+                    <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: '700' }}>Primary Technologies</span>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--cyan-primary)', fontWeight: '600' }}>Flutter, Dart, Next.js, Firebase, React</span>
                   </div>
-                  <div className="focus-item">
-                    <span className="focus-label">Operating Model</span>
-                    <span className="focus-value">Direct Collaboration & Remote Delivery</span>
-                  </div>
-                  <div className="focus-item">
-                    <span className="focus-label">Primary Focus</span>
-                    <span className="focus-value">SMBs, Startups & Commercial Services</span>
+                  <div style={{ background: 'var(--bg-surface)', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-subtle)' }}>
+                    <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: '700' }}>Client Focus</span>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-white)', fontWeight: '600' }}>Pakistani SMBs &amp; International Startups</span>
                   </div>
                 </div>
 
-                <div className="lead-signature">
-                  <div className="lead-avatar">AS</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingTop: '16px', borderTop: '1px solid var(--border-subtle)' }}>
+                  <div style={{ width: '42px', height: '42px', borderRadius: '50%', background: 'var(--cyan-primary)', color: '#050811', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '0.9rem' }}>AS</div>
                   <div>
-                    <div className="lead-name">Abdus Sami</div>
-                    <div className="lead-role">Founder & Software Engineer</div>
+                    <div style={{ fontWeight: '700', color: 'var(--text-white)', fontSize: '0.92rem' }}>Abdus Sami</div>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Lead Software Engineer</div>
                   </div>
                 </div>
               </div>
@@ -119,22 +117,22 @@ export default function AboutPage() {
       </section>
 
       {/* Core Principles */}
-      <section className="section-py bg-subtle-section">
+      <section className="section-padding bg-section-void">
         <div className="container">
-          <div className="section-header-centered">
-            <span className="section-tag">How We Think</span>
-            <h2 className="section-title">The Principles Behind Every Solution</h2>
-            <p className="section-desc">
+          <div className="section-title-wrapper text-center">
+            <span className="badge-pill-cyan">How We Think</span>
+            <h2 className="section-headline">The Principles Behind Every Solution</h2>
+            <p className="section-subheadline">
               Every system we architect is evaluated against these four core engineering criteria.
             </p>
           </div>
 
-          <div className="grid-2 values-grid">
+          <div className="values-grid">
             {values.map((v, i) => (
-              <div key={i} className="value-card card-base">
-                <div className="value-index">0{i + 1}</div>
-                <h3 className="value-title">{v.title}</h3>
-                <p className="value-desc">{v.desc}</p>
+              <div key={i} className="value-card card-dark-elevated">
+                <div className="badge-num" style={{ marginBottom: '12px' }}>0{i + 1}</div>
+                <h3 style={{ fontSize: '1.25rem', color: 'var(--text-white)', marginBottom: '8px', fontWeight: '700' }}>{v.title}</h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.55', margin: 0 }}>{v.desc}</p>
               </div>
             ))}
           </div>
@@ -142,26 +140,24 @@ export default function AboutPage() {
       </section>
 
       {/* Approach to Client Engagements */}
-      <section className="section-py">
-        <div className="container approach-container">
-          <div className="approach-box card-base">
-            <span className="section-tag">Our Commitment</span>
-            <h2 className="approach-title">Direct Engineering Communication</h2>
-            <p className="approach-text">
+      <section className="section-padding bg-section-darker">
+        <div className="container" style={{ maxWidth: '840px', textAlign: 'center' }}>
+          <div className="card-dark-elevated">
+            <span className="badge-pill-cyan">Direct Collaboration</span>
+            <h2 className="section-headline" style={{ marginBottom: '16px' }}>Direct Engineering Communication</h2>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.65', marginBottom: '14px' }}>
               When you work with NeoProcesses, you do not talk through layers of non-technical
               account managers or generic customer service reps. You speak directly with the
               engineer designing your database schema, writing your app logic, and deploying
               your servers.
             </p>
-            <p className="approach-text">
+            <p style={{ color: 'var(--text-muted)', lineHeight: '1.65', marginBottom: '28px' }}>
               This guarantees zero loss of detail, rapid feedback loops, and solutions
               that precisely align with what your operations require.
             </p>
-            <div className="approach-cta">
-              <Link href="/contact" className="btn btn-primary">
-                Discuss Your Requirements With Us
-              </Link>
-            </div>
+            <Link href="/contact" className="btn btn-primary">
+              Discuss Your Requirements With Us
+            </Link>
           </div>
         </div>
       </section>
