@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" width="100%" height="100%">
+  <!-- EMBLEM ON LEFT -->
+  <g transform="translate(10, 5) scale(0.37)">
+    <!-- REAR ORBIT -->
+    <path d="M 282 108 C 304 108 340 114 340 128 C 340 142 300 156 284 158 C 290 150 292 144 290 138 C 314 138 318 132 318 128 C 318 123 298 116 278 114 Z" 
+          fill="#EB5238"/>
+
+    <!-- INNER PEACH DISC -->
+    <circle cx="200" cy="150" r="102" fill="#F8D8C0" />
+
+    <!-- OUTER MAROON RING -->
+    <circle cx="200" cy="150" r="102" fill="none" stroke="#520E18" stroke-width="16" />
+
+    <!-- FRONT ORBIT & ARROW -->
+    <path d="M 100 134 
+             C 60 134 32 142 32 158 
+             C 32 174 72 186 120 186 
+             C 92 186 52 178 52 165 
+             C 52 152 78 147 108 147 
+             L 220 147 
+             L 220 134 Z" 
+          fill="#EB5238"/>
+
+    <!-- ARROW SHAFT -->
+    <rect x="76" y="156" width="160" height="15" fill="#EB5238" />
+
+    <!-- ARROW HEAD -->
+    <polygon points="216,122 284,163.5 216,205 228,163.5" fill="#EB5238" />
+  </g>
+
+  <!-- DIVIDER LINE -->
+  <line x1="165" y1="20" x2="165" y2="100" stroke="#E2E8F0" stroke-width="1.5" />
+
+  <!-- BRAND TYPOGRAPHY -->
+  <!-- Arabic Name -->
+  <text x="180" y="44" font-family="'Cairo', 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#1A1F2C">
+    مؤسسة روان محمد الهاجري
+  </text>
+  
+  <!-- English Name -->
+  <text x="180" y="74" font-family="'Plus Jakarta Sans', 'Inter', 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#4B0F19" letter-spacing="0.5">
+    ROWAN MOHAMMED AL-HAJRI EST.
+  </text>
+
+  <!-- Tagline / Subtitle & CR -->
+  <text x="180" y="96" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="11" font-weight="600" fill="#64748B" letter-spacing="1">
+    CR: 7007290716 <tspan fill="#D19C4C">•</tspan> A NAME OF TRUST
+  </text>
+</svg>

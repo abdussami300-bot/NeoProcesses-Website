@@ -1,173 +1,426 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Services & What We Build | NeoProcesses',
+  title: 'Services & Capabilities | NeoProcesses Software Development',
   description:
-    'Custom software engineering services from NeoProcesses: Websites & Web Applications, POS & Business Management Systems, and Tailored Software & Mobile Applications.',
+    'Comprehensive software development services from NeoProcesses: Websites, Mobile Applications, Custom Software, POS & Billing Systems, Business Management Systems, and E-commerce Solutions.',
 };
 
 export default function ServicesPage() {
   const serviceCategories = [
     {
-      id: 'websites',
-      title: 'Websites & Web Applications',
-      tagline: 'High-Performance Web Presences Engineered for Credibility, Speed, and Conversions',
+      id: 'web-development',
+      index: '01',
+      title: 'Website Design & Development',
+      badge: 'Web Platforms',
+      tagline: 'High-performance corporate websites, responsive portals, and conversion-focused web presences.',
       problemAddressed:
-        'Generic website templates frequently fail to project authority, suffer from sluggish performance, and lack custom inquiry pipelines necessary to convert visitors into paying clients.',
-      description:
-        'A website is frequently the very first touchpoint for your clients, commercial partners, or investors. We build responsive, performant, and search-optimized websites and web applications that represent your business with authority.',
-      capabilities: [
-        'Corporate Profile & Commercial Company Websites',
-        'Product & Service Catalogues with Direct WhatsApp Inquiries',
-        'Customer Portals & Authenticated Web Applications',
-        'Fully Responsive Mobile, Tablet & Desktop Layouts',
-        'Search Engine Optimization (SEO) & Fast Load Speeds',
-        'Domain Configuration & Vercel / Cloud Deployment Support',
+        'Generic website templates frequently project a cheap, amateur appearance, suffer from sluggish loading speeds on mobile data networks, and lack the custom business pipelines needed to convert prospective clients into inquiries.',
+      overview:
+        'A website is often the very first touchpoint for your prospective clients, commercial partners, or institutional procurement teams. We build clean, high-speed corporate websites and business web applications using modern web standards that communicate authority and reliability.',
+      whatIncludes: [
+        'Custom Next.js & React corporate websites tailored to your brand identity',
+        'Interactive digital product and service catalogues with direct WhatsApp RFQ links',
+        'Customer self-service portals and authenticated client areas',
+        'Mobile-first responsive design ensuring zero visual overflow on smartphones',
+        'Search Engine Optimization (SEO) metadata, OpenGraph tags, and sitemaps',
+        'Domain configuration, SSL certificates, and cloud deployment on Vercel',
       ],
-      technologies: ['Next.js', 'React', 'HTML5 / Semantic CSS', 'Responsive UI', 'Vercel Deployment'],
-      useCase: 'Best for: Commercial suppliers, professional service firms, consultancies, and retailers wanting an authoritative digital presence.',
+      typicalApplications:
+        'Commercial suppliers, architectural and engineering firms, manufacturing workshops, professional service consultancies, and digital brands wanting an authoritative online presence.',
+      exampleFeatures: [
+        'Dynamic procurement catalogue with categorised search',
+        'Instant Request-for-Quote (RFQ) triggers linking to WhatsApp or email',
+        'Multi-language presentation (e.g. English & Arabic for Saudi commercial clients)',
+        'Instant mobile navigation drawer and interactive consultation modals',
+      ],
+      technologies: ['Next.js', 'React', 'HTML5', 'Semantic CSS3', 'JavaScript', 'Vercel'],
     },
     {
-      id: 'systems',
-      title: 'POS & Business Management Systems',
-      tagline: 'Streamlined Systems for Billing, Orders, Inventory, and Operations',
+      id: 'mobile-development',
+      index: '02',
+      title: 'Mobile Application Development',
+      badge: 'Cross-Platform Mobile',
+      tagline: 'Flutter-powered iOS and Android applications engineered for fluid performance and daily field use.',
       problemAddressed:
-        'Managing business operations on paper registers, lost order slips, and untracked inventory creates costly daily bottlenecks, delayed customer handovers, and calculation errors.',
-      description:
-        'Eliminate chaotic spreadsheets, missed orders, and manual record-keeping errors. We develop business management software that brings structure, operational transparency, and accountability to your daily workflows.',
-      capabilities: [
-        'Point-of-Sale (POS) & Streamlined Billing Interfaces',
-        'Order & Booking Lifecycle Management (Intake, In-Progress, Ready, Delivered)',
-        'Inventory Tracking, Stock Intake & Balance Auditing',
-        'Operational Dashboards for Daily Revenue & Activity Visibility',
-        'Staff Permission Controls & Role-Based Access',
-        'Receipt Generation & Printable Invoices',
+        'Maintaining separate native codebases for iOS and Android doubles development costs and creates feature divergence. Slow, buggy mobile interfaces frustrate users and lead to lost transactions.',
+      overview:
+        'We engineer cross-platform mobile applications using Google Flutter and Dart, allowing you to deploy native-speed apps to both Google Play and the Apple App Store from a single, disciplined codebase. Our apps feature offline resilience, device camera integration, and real-time database synchronization.',
+      whatIncludes: [
+        'Cross-platform Flutter mobile applications for Android and iOS',
+        'Multi-role interface architectures (e.g. Customer, Host, Field Operator, Admin)',
+        'On-device hardware integration (camera photo logging, GPS coordinates, local storage)',
+        'Real-time cloud database snapshot streams with automatic offline caching',
+        'Push notifications, user authentication, and secure profile management',
+        'Google Play Console closed testing, app signing, and release preparation',
       ],
-      technologies: ['React', 'Next.js', 'Firestore / Cloud Databases', 'Role-Based Access Control'],
-      useCase: 'Best for: Laundromats, repair shops, wholesale distributors, service centers, and boutique retailers.',
+      typicalApplications:
+        'Car rental and vehicle booking marketplaces, delivery and field inspection workflows, customer loyalty apps, service technician logs, and internal staff tools.',
+      exampleFeatures: [
+        'Photographic condition inspection before and after service handover',
+        'Live booking status timeline (Pending → Confirmed → Active → Completed)',
+        'Secure SMS / Phone and email authentication with biometric unlock support',
+        'Real-time Firestore listeners updating screens without pull-to-refresh',
+      ],
+      technologies: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Cloud Storage', 'REST APIs'],
     },
     {
-      id: 'custom',
-      title: 'Custom Software & Mobile Applications',
-      tagline: 'Tailored Mobile Apps and Bespoke Internal Systems Built for Unique Workflows',
+      id: 'custom-software',
+      index: '03',
+      title: 'Custom Software Development',
+      badge: 'Bespoke Engineering',
+      tagline: 'Tailored backend systems, proprietary dashboards, and bespoke logic built around your exact workflows.',
       problemAddressed:
-        'Off-the-shelf software packages rarely match unique operational workflows and impose expensive recurring monthly subscriptions per user seat.',
-      description:
-        'When standard software cannot accommodate your company’s unique workflow, we engineer custom software and cross-platform mobile apps specifically adapted to your processes, database relationships, and business rules.',
-      capabilities: [
-        'Cross-Platform Flutter Mobile Applications for Android & iOS',
-        'Secure Administrative Portals with Multi-Level Permissions',
-        'Cloud Database Synchronization & Offline Storage Support',
-        'Custom Workflow Automations & Business Logic Rules',
-        'Secure Multi-Role Authentication (Customer, Host, Operations Staff, Admin)',
-        'Continuous Maintenance, Refactoring & Security Hardening',
+        'Off-the-shelf software packages force your team into rigid, awkward workarounds and charge expensive recurring per-seat monthly subscriptions while holding your data captive.',
+      overview:
+        'When standard commercial packages cannot accommodate your unique business logic, NeoProcesses designs and implements bespoke software solutions. We model your real data relationships, enforce granular security permissions, and build management tools that mirror your operational requirements exactly.',
+      whatIncludes: [
+        'Bespoke administrative consoles with role-based access control (RBAC)',
+        'Custom cloud database schema design (relational and document structures)',
+        'Granular security rules preventing unauthorized data inspection or tampering',
+        'Automated business logic rules, calculations, and stage progression pipelines',
+        'RESTful API architecture connecting web, mobile, and third-party systems',
+        'Commercial source code handover with complete documentation and zero vendor lock-in',
       ],
-      technologies: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Firebase Storage', 'Node.js'],
-      useCase: 'Best for: Booking marketplaces, field operations, rental services, and businesses with specialized operational rules.',
+      typicalApplications:
+        'Multi-branch enterprises, specialized workshop operations, peer-to-peer marketplaces, bespoke estimation and pricing tools, and internal resource management.',
+      exampleFeatures: [
+        'Custom formula calculator for dimensional material fabrication pricing',
+        'Role-separated viewports (cashier cannot inspect manager revenue analytics)',
+        'Automated activity audit logs tracking which user made specific record changes',
+        'Secure data export pipelines in Excel and PDF formats',
+      ],
+      technologies: ['Node.js', 'Next.js', 'Cloud Firestore', 'PostgreSQL / SQL', 'REST APIs', 'RBAC'],
+    },
+    {
+      id: 'pos-billing',
+      index: '04',
+      title: 'POS & Billing Systems',
+      badge: 'Operational Point of Sale',
+      tagline: 'Rapid checkout billing terminals, automated receipts, tax calculations, and daily cash registers.',
+      problemAddressed:
+        'Handwritten paper slips and basic calculator registers cause slow checkout lines, frequent arithmetic errors, untracked cash balances, and unsearchable customer transaction histories.',
+      overview:
+        'We develop custom Point-of-Sale (POS) and counter billing systems designed for rapid daily operation. Built with touch-friendly controls and instant receipt generation, our billing terminals empower counter staff to process orders accurately while giving business owners real-time revenue visibility.',
+      whatIncludes: [
+        'Rapid counter checkout interfaces optimized for keyboard and touch screens',
+        'Instant printable thermal receipt generation (58mm / 80mm) and PDF invoices',
+        'Automated discount calculations, tax adjustments, and payment method logging',
+        'Daily cash drawer register reconciliation and shift balance reports',
+        'Customer transaction history and quick re-billing by phone number',
+        'Bilingual English / Urdu interface options for workshop and counter staff',
+      ],
+      typicalApplications:
+        'Aluminium and glass workshops, retail counters, repair service centers, wholesale distributors, laundromats, and commercial trade counters.',
+      exampleFeatures: [
+        'Fast product barcode and category quick-tap grid for high-speed checkout',
+        'Custom receipt header and footer with business logo, QR code, and terms',
+        'Partial payment and customer credit ledger tracking for ongoing orders',
+        'End-of-day register closing summary with cash, card, and digital breakdown',
+      ],
+      technologies: ['React', 'Next.js', 'POS Architecture', 'Thermal ESC/POS', 'Cloud DB'],
+    },
+    {
+      id: 'management-systems',
+      index: '05',
+      title: 'Business Management Systems',
+      badge: 'Operations & Workflow',
+      tagline: 'End-to-end order tracking, inventory management, workshop queues, and administrative oversight.',
+      problemAddressed:
+        'Using disconnected spreadsheets across sales, workshop staff, and delivery creates costly communication breakdowns, lost order slips, delayed customer deliveries, and stock shortages.',
+      overview:
+        'Bring centralized order and accountability to your entire operating workflow. Our business management software tracks orders through every phase of their lifecycle, monitors stock movements in real time, and provides owners with clear operational oversight from any browser or device.',
+      whatIncludes: [
+        'Order lifecycle tracking from intake through processing, QA, and customer delivery',
+        'Inventory tracking with raw material stock balances and low-stock alerts',
+        'Workshop job card dispatch boards keeping technicians focused on prioritized tasks',
+        'Customer record management with contact logs and service history',
+        'Centralized operational dashboards tracking active orders and revenue metrics',
+        'Multi-user permission levels separating front counter, technicians, and management',
+      ],
+      typicalApplications:
+        'Fabrication workshops, equipment repair operations, garment care facilities, distribution warehouses, and multi-step commercial service providers.',
+      exampleFeatures: [
+        'Visual Kanban and table views for orders by stage (Intake → In Progress → Ready → Delivered)',
+        'Material consumption logging deducting stock automatically when jobs are created',
+        'Automated SMS / WhatsApp notification triggers when orders reach "Ready" status',
+        'Manager performance analytics tracking average turnaround time per service stage',
+      ],
+      technologies: ['Next.js', 'React', 'Cloud Firestore', 'Workflow State Machines', 'Role RBAC'],
+    },
+    {
+      id: 'ecommerce',
+      index: '06',
+      title: 'E-commerce Solutions',
+      badge: 'Digital Commerce',
+      tagline: 'B2B digital catalogues, direct WhatsApp ordering, online storefronts, and procurement pipelines.',
+      problemAddressed:
+        'Traditional distributors lose potential clients who want to browse products online, check specifications, and place bulk procurement inquiries without playing phone tag.',
+      overview:
+        'We build modern digital commerce platforms that enable businesses to showcase products cleanly, receive structured wholesale orders, and connect directly with institutional and retail buyers. From B2B quotation portals to streamlined consumer stores, we optimize the entire purchasing journey.',
+      whatIncludes: [
+        'B2B and B2C digital storefronts with structured category hierarchies',
+        'Direct WhatsApp quotation and order dispatch with auto-formatted item lists',
+        'Downloadable procurement catalogues, product data sheets, and price books',
+        'Cart management, request-for-quote (RFQ) workflows, and custom bulk tiers',
+        'Fast mobile-first browsing optimized for slow network environments',
+        'Content management setup allowing your team to update inventory and pricing',
+      ],
+      typicalApplications:
+        'Industrial and commercial suppliers, wholesale distributors, hardware and electrical dealers, specialty retail brands, and food procurement vendors.',
+      exampleFeatures: [
+        'Instant "Request Quote on WhatsApp" button packaging selected items automatically',
+        'Bulk SKU inquiry form enabling corporate buyers to paste procurement lists',
+        'Search with real-time filtering by category, brand, and specification attributes',
+        'High-resolution multi-angle product photography galleries and specification tables',
+      ],
+      technologies: ['Next.js', 'React', 'E-commerce Pipelines', 'WhatsApp Business Links', 'Cloud Storage'],
     },
   ];
 
   return (
-    <div className="services-page">
-      {/* Header */}
+    <div className="services-page-wrapper">
+      {/* Page Header */}
       <section className="page-header-section">
         <div className="container">
-          <span className="badge-pill-cyan">Service Capabilities</span>
-          <h1 className="page-title">Custom Software Built Around Your Business</h1>
+          <div className="page-header-pill">
+            <span className="pulse-orb"></span>
+            <span>Comprehensive Technical Capabilities</span>
+          </div>
+          <h1 className="page-title">
+            Custom Software Built Around <br />
+            <span className="blue-gradient-text">Your Exact Operations.</span>
+          </h1>
           <p className="page-lead">
-            We deliver clear, production-tested solutions designed around your
-            actual requirements — without bloated scopes or hidden fees.
+            NeoProcesses provides a broad range of software engineering and digital solutions.
+            We design practical systems that remove everyday operational bottlenecks, improve staff efficiency,
+            and establish corporate credibility.
           </p>
         </div>
       </section>
 
-      {/* Services List */}
-      <section className="section-padding bg-section-darker">
-        <div className="container services-container">
-          <div className="services-stack" style={{ display: 'flex', flexDirection: 'column', gap: '36px' }}>
-            {serviceCategories.map((svc, index) => (
-              <div key={svc.id} id={svc.id} className="service-detail-card card-dark-elevated">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                  <span className="badge-num">0{index + 1}</span>
-                  <span className="badge-pill-cyan" style={{ marginBottom: 0 }}>{svc.title}</span>
+      {/* Services Detailed List */}
+      <section className="section-padding bg-surface">
+        <div className="container">
+          <div className="services-deep-stack">
+            {serviceCategories.map((svc) => (
+              <article key={svc.id} id={svc.id} className="service-deep-card card-dark-elevated">
+                {/* Card Header Strip */}
+                <div className="service-deep-header">
+                  <div className="service-deep-meta">
+                    <span className="service-deep-idx">{svc.index}</span>
+                    <span className="badge-pill-cyan">{svc.badge}</span>
+                  </div>
+                  <h2 className="service-deep-title">{svc.title}</h2>
+                  <p className="service-deep-tagline">{svc.tagline}</p>
                 </div>
 
-                <div className="service-main-grid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '36px' }}>
-                  <div className="service-info-col">
-                    <h2 style={{ fontSize: '1.75rem', marginBottom: '10px', color: 'var(--text-white)' }}>{svc.title}</h2>
-                    <p style={{ fontSize: '1rem', color: 'var(--cyan-primary)', fontWeight: '600', marginBottom: '16px' }}>{svc.tagline}</p>
-                    <p style={{ color: 'var(--text-secondary)', marginBottom: '20px', lineHeight: '1.6' }}>{svc.description}</p>
-                    
-                    <div style={{ background: 'rgba(244, 63, 94, 0.08)', borderLeft: '3px solid var(--rose-accent)', padding: '12px 16px', borderRadius: '0 8px 8px 0', marginBottom: '18px' }}>
-                      <strong style={{ color: 'var(--rose-accent)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '4px' }}>Business Challenge Addressed:</strong>
-                      <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0 }}>{svc.problemAddressed}</p>
-                    </div>
+                {/* Problem vs Solution Split */}
+                <div className="service-comparison-split">
+                  <div className="split-box problem-box">
+                    <span className="split-label red">The Operational Bottleneck</span>
+                    <p className="split-text">{svc.problemAddressed}</p>
+                  </div>
+                  <div className="split-box solution-box">
+                    <span className="split-label cyan">The NeoProcesses Solution</span>
+                    <p className="split-text">{svc.overview}</p>
+                  </div>
+                </div>
 
-                    <div style={{ background: 'var(--bg-surface)', padding: '14px 18px', borderRadius: '8px', border: '1px solid var(--border-subtle)' }}>
-                      <strong style={{ color: 'var(--text-dim)', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>Target Fit:</strong>
-                      <span style={{ color: 'var(--text-secondary)', fontSize: '0.88rem' }}>{svc.useCase}</span>
-                    </div>
+                {/* Grid of What It Includes & Example Features */}
+                <div className="service-details-grid">
+                  <div className="details-col">
+                    <h3 className="details-col-heading">What the Service Includes</h3>
+                    <ul className="details-bullet-list">
+                      {svc.whatIncludes.map((inc, i) => (
+                        <li key={i} className="details-bullet-item">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{inc}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <div className="service-deliverables-col" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                    <div>
-                      <h3 style={{ fontSize: '1.15rem', marginBottom: '14px', color: 'var(--text-white)' }}>What We Deliver</h3>
-                      <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
-                        {svc.capabilities.map((cap, i) => (
-                          <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ width: '16px', height: '16px', color: 'var(--cyan-primary)', flexShrink: 0, marginTop: '3px' }}>
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>{cap}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  <div className="details-col">
+                    <h3 className="details-col-heading">Example Features &amp; Applications</h3>
+                    <ul className="details-bullet-list">
+                      {svc.exampleFeatures.map((feat, i) => (
+                        <li key={i} className="details-bullet-item">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                      <div style={{ marginBottom: '24px' }}>
-                        <span style={{ display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--cyan-primary)', fontWeight: '700', marginBottom: '8px' }}>Technology Stack:</span>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                          {svc.technologies.map((t) => (
-                            <span key={t} className="tech-pill-dark">{t}</span>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="typical-use-box">
+                      <span className="use-label">Typical Business Applications:</span>
+                      <p className="use-text">{svc.typicalApplications}</p>
                     </div>
+                  </div>
+                </div>
 
-                    <div>
-                      <Link
-                        href={`/contact?service=${encodeURIComponent(svc.title)}`}
-                        className="btn btn-primary btn-block"
-                      >
-                        Discuss This Solution
-                      </Link>
-                    </div>
+                {/* Bottom Tech & CTA Strip */}
+                <div className="service-deep-footer">
+                  <div className="service-tech-pills">
+                    <span className="tech-pills-label">Core Technologies:</span>
+                    {svc.technologies.map((t) => (
+                      <span key={t} className="tech-tag">{t}</span>
+                    ))}
+                  </div>
+
+                  <div className="service-action-buttons">
+                    <Link
+                      href={`/contact?service=${encodeURIComponent(svc.title)}`}
+                      className="btn btn-primary btn-sm"
+                    >
+                      <span>Request a Quote</span>
+                      <span className="arrow-icon">→</span>
+                    </Link>
+                    <a
+                      href={`https://wa.me/923265635826?text=${encodeURIComponent(`Hello NeoProcesses, I would like to inquire about your ${svc.title} service.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-whatsapp btn-sm"
+                    >
+                      Discuss on WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+
+            {/* Additional Capability: Graphic Design & Branding */}
+            <article id="branding" className="service-deep-card card-dark-elevated branding-special-card">
+              <div className="service-deep-header">
+                <div className="service-deep-meta">
+                  <span className="service-deep-idx" style={{ color: '#F472B6' }}>07</span>
+                  <span className="badge-pill-cyan" style={{ borderColor: 'rgba(236, 72, 153, 0.4)', color: '#F472B6', background: 'rgba(236, 72, 153, 0.12)' }}>Creative Services</span>
+                </div>
+                <h2 className="service-deep-title">Graphic Design &amp; Corporate Branding</h2>
+                <p className="service-deep-tagline">Brand identities, logos, marketing presentation assets, and promotional design collateral.</p>
+              </div>
+
+              <div className="service-comparison-split">
+                <div className="split-box problem-box">
+                  <span className="split-label red">The Brand Problem</span>
+                  <p className="split-text">Companies with powerful products frequently suffer from inconsistent, amateur branding across digital and print touchpoints, diminishing client confidence.</p>
+                </div>
+                <div className="split-box solution-box">
+                  <span className="split-label cyan" style={{ color: '#F472B6' }}>Creative Direction</span>
+                  <p className="split-text">We create cohesive corporate brand identities that seamlessly unite your software interfaces, social media campaigns, sales pitch decks, and physical company profiles.</p>
+                </div>
+              </div>
+
+              <div className="service-details-grid">
+                <div className="details-col">
+                  <h3 className="details-col-heading">Creative Capabilities</h3>
+                  <ul className="details-bullet-list">
+                    <li className="details-bullet-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span><strong>Brand Identity &amp; Logos:</strong> Corporate emblems, logo marks, typography standards, and brand design guidelines.</span>
+                    </li>
+                    <li className="details-bullet-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span><strong>Social Media Creatives:</strong> High-impact promotional posts, carousel graphics, and engagement visuals.</span>
+                    </li>
+                    <li className="details-bullet-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span><strong>Marketing Graphics:</strong> Digital banner ads, presentation visuals, product infographics, and digital flyers.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="details-col">
+                  <h3 className="details-col-heading">Print &amp; Collateral Deliverables</h3>
+                  <ul className="details-bullet-list">
+                    <li className="details-bullet-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span><strong>Print-Ready Company Profiles:</strong> High-resolution multi-page corporate PDF binders formatted for executive presentation.</span>
+                    </li>
+                    <li className="details-bullet-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span><strong>Commercial Catalogues:</strong> Structured industrial catalogues with clean product photography and table specs.</span>
+                    </li>
+                  </ul>
+
+                  <div className="typical-use-box">
+                    <span className="use-label">Typical Application:</span>
+                    <p className="use-text">Companies launching a new software platform, commercial suppliers seeking institutional procurement contracts, and expanding businesses.</p>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* Feasibility advisory */}
-          <div className="feasibility-advisory-box" style={{ marginTop: '40px' }}>
-            <div className="advisory-icon">ℹ️</div>
-            <p className="advisory-text">
-              <strong>Transparent Consultation:</strong> We do not promise every feature for every project. Scope, timeline, and architectural feasibility are evaluated during initial requirement discussions to guarantee reliable delivery.
-            </p>
+              <div className="service-deep-footer">
+                <div className="service-tech-pills">
+                  <span className="tech-pills-label">Design Tooling:</span>
+                  <span className="tech-tag">Vector SVG</span>
+                  <span className="tech-tag">Brand Standards</span>
+                  <span className="tech-tag">Print CMYK</span>
+                  <span className="tech-tag">Figma</span>
+                </div>
+
+                <div className="service-action-buttons">
+                  <Link
+                    href="/contact?service=Graphic%20Design%20%26%20Branding"
+                    className="btn btn-primary btn-sm"
+                  >
+                    <span>Request Branding Quote</span>
+                    <span className="arrow-icon">→</span>
+                  </Link>
+                  <a
+                    href="https://wa.me/923265635826?text=Hello%20NeoProcesses%2C%20I%20would%20like%20to%20inquire%20about%20your%20Graphic%20Design%20%26%20Branding%20services."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-whatsapp btn-sm"
+                  >
+                    Discuss on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* Consultation Banner */}
-      <section className="section-padding bg-section-void">
-        <div className="container" style={{ textAlign: 'center', maxWidth: '780px' }}>
-          <span className="badge-pill-cyan">Need Advice?</span>
-          <h2 className="section-headline">Uncertain which solution fits your business?</h2>
-          <p className="section-subheadline" style={{ marginBottom: '32px' }}>
-            We offer direct, no-pressure requirement discussions to evaluate your current setup and recommend a practical, cost-effective path forward.
+      {/* CTA Strip */}
+      <section className="section-padding bg-canvas">
+        <div className="container text-center">
+          <span className="badge-pill-cyan">Need Guidance?</span>
+          <h2 className="section-main-heading" style={{ marginTop: '12px' }}>
+            Not Sure Which Solution Fits Your Needs?
+          </h2>
+          <p className="section-lead-text mx-auto" style={{ marginBottom: '32px' }}>
+            Every business has unique requirements. Connect directly with our lead developer for an honest,
+            no-obligation technical evaluation of your workflow bottlenecks.
           </p>
-          <Link href="/contact" className="btn btn-primary">
-            Schedule a Requirement Review
-          </Link>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            <Link href="/contact" className="btn btn-primary btn-glow">
+              <span>Request a Custom Quote</span>
+              <span className="arrow-icon">→</span>
+            </Link>
+            <a
+              href="https://wa.me/923265635826"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-whatsapp"
+            >
+              Consult Directly on WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </div>

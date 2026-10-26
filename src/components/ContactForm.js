@@ -6,9 +6,10 @@ export default function ContactForm({ preselectedService = '', id = 'inquiry-for
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
+    whatsappNumber: '',
     businessName: '',
     location: '',
-    projectType: preselectedService || 'Business Website',
+    projectType: preselectedService || 'Website Design & Development',
     estimatedBudget: '',
     description: '',
   });
@@ -19,12 +20,14 @@ export default function ContactForm({ preselectedService = '', id = 'inquiry-for
   const [copied, setCopied] = useState(false);
 
   const projectTypes = [
-    'Business Website',
-    'POS / Billing System',
-    'Management System',
-    'Web Application',
-    'Mobile Application',
-    'Other / Not Sure Yet',
+    'Website Design & Development',
+    'Mobile Application Development (Flutter)',
+    'Custom Software Development',
+    'POS & Billing Systems',
+    'Business Management Systems',
+    'E-commerce Solutions',
+    'Graphic Design & Branding',
+    'Other / Custom Enterprise Architecture',
   ];
 
   const budgetOptions = [
@@ -45,11 +48,11 @@ export default function ContactForm({ preselectedService = '', id = 'inquiry-for
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
       errs.email = 'Please enter a valid email address.';
     }
-    if (!formData.location.trim()) {
-      errs.location = 'Please specify your country or city (e.g. Pakistan, UAE, UK).';
+    if (!formData.whatsappNumber.trim()) {
+      errs.whatsappNumber = 'Please provide your WhatsApp or phone number.';
     }
     if (!formData.projectType) {
-      errs.projectType = 'Please select a project type.';
+      errs.projectType = 'Please select a required service.';
     }
     if (!formData.description.trim() || formData.description.trim().length < 15) {
       errs.description = 'Please describe your project requirements (at least 15 characters).';
@@ -71,27 +74,28 @@ export default function ContactForm({ preselectedService = '', id = 'inquiry-for
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // Package inquiry cleanly
-    await new Promise((res) => setTimeout(res, 500));
+    // Package inquiry cleanly for direct client dispatch
+    await new Promise((res) => setTimeout(res, 450));
     setIsSubmitting(false);
     setIsSuccess(true);
   };
 
-  // Structured summary text
+  // Structured summary text formatted for WhatsApp and Email
   const structuredText = `*NeoProcesses Project Inquiry*
 ---------------------------------------
 • *Client Name:* ${formData.fullName}
 • *Email:* ${formData.email}
-• *Business:* ${formData.businessName || 'Individual / Not specified'}
-• *Location:* ${formData.location}
-• *Project Type:* ${formData.projectType}
-• *Estimated Budget:* ${formData.estimatedBudget || 'To be discussed'}
+• *WhatsApp / Phone:* ${formData.whatsappNumber}
+• *Business / Org:* ${formData.businessName || 'Individual / Not specified'}
+• *Location:* ${formData.location || 'Not specified'}
+• *Required Service:* ${formData.projectType}
+• *Budget Range:* ${formData.estimatedBudget || 'To be discussed'}
 
-*Project Requirements & Overview:*
+*Project Scope & Requirements:*
 ${formData.description}`;
 
   const whatsappUrl = `https://wa.me/923265635826?text=${encodeURIComponent(structuredText)}`;
-  const mailtoUrl = `mailto:abdussami039@gmail.com?subject=${encodeURIComponent(`[Project Inquiry] ${formData.projectType} - ${formData.fullName}`)}&body=${encodeURIComponent(structuredText)}`;
+  const mailtoUrl = `mailto:abdusami300@gmail.com?subject=${encodeURIComponent(`[Project Inquiry] ${formData.projectType} - ${formData.fullName}`)}&body=${encodeURIComponent(structuredText)}`;
 
   const copyInquiry = async () => {
     try {
@@ -99,7 +103,7 @@ ${formData.description}`;
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
     } catch {
-      // fallback
+      // Fallback
     }
   };
 
@@ -107,13 +111,13 @@ ${formData.description}`;
     return (
       <div className="inquiry-ready-card card-dark-elevated">
         <div className="ready-badge">
-          <span className="pulse-dot"></span>
-          <span>Inquiry Structured &amp; Ready to Send</span>
+          <span className="pulse-orb" style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10B981' }}></span>
+          <span>Inquiry Formatted &amp; Ready to Send</span>
         </div>
 
         <h3 className="ready-title">Thank you, {formData.fullName}!</h3>
         <p className="ready-desc">
-          Your project specifications have been formatted. Because we value direct, zero-delay engineering communication, send your inquiry directly through your preferred channel below:
+          Your project inquiry has been formatted. Because we offer direct technical communication with zero lost context, send it directly to our engineering lead using either button below:
         </p>
 
         <div className="ready-action-grid">
@@ -137,7 +141,7 @@ ${formData.description}`;
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
-            <span>Open in Email Client</span>
+            <span>Send via Email (abdusami300@gmail.com)</span>
           </a>
         </div>
 
@@ -162,9 +166,10 @@ ${formData.description}`;
             setFormData({
               fullName: '',
               email: '',
+              whatsappNumber: '',
               businessName: '',
               location: '',
-              projectType: 'Business Website',
+              projectType: 'Website Design & Development',
               estimatedBudget: '',
               description: '',
             });
@@ -179,11 +184,19 @@ ${formData.description}`;
 
   return (
     <form className="inquiry-form card-dark-elevated" id={id} onSubmit={handleSubmit} noValidate>
+      <div className="form-header-bar">
+        <div>
+          <h3 className="form-headline">Request a Free Project Quote</h3>
+          <p className="form-subheadline">Tell us about your operational challenge or project idea.</p>
+        </div>
+        <span className="badge-pill-cyan" style={{ fontSize: '0.7rem' }}>24h Direct Reply</span>
+      </div>
+
       <div className="form-grid-2">
         {/* Full Name */}
         <div className="form-group">
           <label htmlFor="fullName" className="form-label">
-            Your Name <span className="req">*</span>
+            Full Name <span className="req">*</span>
           </label>
           <input
             type="text"
@@ -191,7 +204,7 @@ ${formData.description}`;
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
-            placeholder="e.g. Tariq Mehmood / Alex Morgan"
+            placeholder="e.g. Tariq Mehmood"
             className={`form-input-dark ${errors.fullName ? 'is-error' : ''}`}
             aria-invalid={errors.fullName ? 'true' : 'false'}
           />
@@ -209,7 +222,7 @@ ${formData.description}`;
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="e.g. contact@yourbusiness.com"
+            placeholder="e.g. client@company.com"
             className={`form-input-dark ${errors.email ? 'is-error' : ''}`}
             aria-invalid={errors.email ? 'true' : 'false'}
           />
@@ -218,7 +231,25 @@ ${formData.description}`;
       </div>
 
       <div className="form-grid-2">
-        {/* Business Name */}
+        {/* WhatsApp Number (Required per Phase 9) */}
+        <div className="form-group">
+          <label htmlFor="whatsappNumber" className="form-label">
+            WhatsApp / Phone Number <span className="req">*</span>
+          </label>
+          <input
+            type="tel"
+            id="whatsappNumber"
+            name="whatsappNumber"
+            value={formData.whatsappNumber}
+            onChange={handleChange}
+            placeholder="e.g. +92 300 1234567 or +966 50 123 4567"
+            className={`form-input-dark ${errors.whatsappNumber ? 'is-error' : ''}`}
+            aria-invalid={errors.whatsappNumber ? 'true' : 'false'}
+          />
+          {errors.whatsappNumber && <p className="error-msg-dark">{errors.whatsappNumber}</p>}
+        </div>
+
+        {/* Business / Company Name */}
         <div className="form-group">
           <label htmlFor="businessName" className="form-label">
             Business / Organization <span className="opt">(Optional)</span>
@@ -229,35 +260,17 @@ ${formData.description}`;
             name="businessName"
             value={formData.businessName}
             onChange={handleChange}
-            placeholder="e.g. Al-Madina Traders or Nova Dynamics"
+            placeholder="e.g. Al-Noor Logistics or Startup Team"
             className="form-input-dark"
           />
-        </div>
-
-        {/* Country / Location */}
-        <div className="form-group">
-          <label htmlFor="location" className="form-label">
-            Location / Country <span className="req">*</span>
-          </label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            placeholder="e.g. Islamabad, Pakistan / Dubai, UAE / London, UK"
-            className={`form-input-dark ${errors.location ? 'is-error' : ''}`}
-            aria-invalid={errors.location ? 'true' : 'false'}
-          />
-          {errors.location && <p className="error-msg-dark">{errors.location}</p>}
         </div>
       </div>
 
       <div className="form-grid-2">
-        {/* Project Type */}
+        {/* Required Service */}
         <div className="form-group">
           <label htmlFor="projectType" className="form-label">
-            Project Type <span className="req">*</span>
+            Required Service <span className="req">*</span>
           </label>
           <select
             id="projectType"
@@ -279,7 +292,7 @@ ${formData.description}`;
         {/* Estimated Budget */}
         <div className="form-group">
           <label htmlFor="estimatedBudget" className="form-label">
-            Estimated Budget <span className="opt">(Optional)</span>
+            Estimated Budget Range <span className="opt">(Optional)</span>
           </label>
           <select
             id="estimatedBudget"
@@ -288,7 +301,7 @@ ${formData.description}`;
             onChange={handleChange}
             className="form-select-dark"
           >
-            <option value="">Select an approximate range...</option>
+            <option value="">Select approximate budget range...</option>
             {budgetOptions.map((b) => (
               <option key={b} value={b}>
                 {b}
@@ -301,7 +314,7 @@ ${formData.description}`;
       {/* Project Description */}
       <div className="form-group">
         <label htmlFor="description" className="form-label">
-          Project Description &amp; Challenge <span className="req">*</span>
+          Project Description &amp; Requirements <span className="req">*</span>
         </label>
         <textarea
           id="description"
@@ -309,7 +322,7 @@ ${formData.description}`;
           rows="4"
           value={formData.description}
           onChange={handleChange}
-          placeholder="Describe what you want to achieve, your daily workflow pain points, required features, or target timeline..."
+          placeholder="Describe what your business needs, current manual pain points, key user roles, or target timeline..."
           className={`form-textarea-dark ${errors.description ? 'is-error' : ''}`}
           aria-invalid={errors.description ? 'true' : 'false'}
         ></textarea>
@@ -329,7 +342,7 @@ ${formData.description}`;
             </>
           ) : (
             <>
-              <span>Submit Project Inquiry</span>
+              <span>Format &amp; Send Inquiry</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -340,7 +353,7 @@ ${formData.description}`;
 
         <div className="form-guarantee-note">
           <span className="dot-green"></span>
-          <span>Zero spam. Direct reply from our engineering lead within 24 hours.</span>
+          <span>Zero spam. Direct consultation from engineering lead within 24 hours.</span>
         </div>
       </div>
     </form>
