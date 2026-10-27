@@ -46,81 +46,120 @@ export default function Header() {
   ];
 
   return (
-    <header className={`site-header ${scrolled ? 'header-scrolled' : ''}`}>
-      <div className="container header-container">
-        {/* Brand Logo */}
-        <Link href="/" className="header-logo" aria-label="NeoProcesses Home">
-          <div className="brand-lockup">
-            <img
-              src={assetPath('/images/neoprocesses_symbol.svg')}
-              alt="NeoProcesses Symbol"
-              width="36"
-              height="36"
-              className="logo-symbol-img"
-            />
-            <div className="brand-text-wrapper">
-              <span className="brand-name">Neo<span className="brand-highlight">Processes</span></span>
-              <span className="brand-tagline">Custom Software</span>
+    <>
+      <header className={`site-header ${scrolled ? 'header-scrolled' : ''}`}>
+        <div className="container header-container">
+          {/* Brand Logo */}
+          <Link href="/" className="header-logo" aria-label="NeoProcesses Home">
+            <div className="brand-lockup">
+              <img
+                src={assetPath('/images/neoprocesses_symbol.svg')}
+                alt="NeoProcesses Symbol"
+                width="36"
+                height="36"
+                className="logo-symbol-img"
+              />
+              <div className="brand-text-wrapper">
+                <span className="brand-name">Neo<span className="brand-highlight">Processes</span></span>
+                <span className="brand-tagline">Custom Software</span>
+              </div>
             </div>
-          </div>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="desktop-nav" aria-label="Main Navigation">
-          <ul className="nav-list">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className={`nav-link ${isActive ? 'active' : ''}`}
-                    aria-current={isActive ? 'page' : undefined}
-                  >
-                    <span>{link.label}</span>
-                    {isActive && <span className="active-dot"></span>}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-
-        {/* Desktop Action: Get a Quote */}
-        <div className="header-actions">
-          <Link
-            href="/contact"
-            className="btn btn-primary btn-header"
-          >
-            <span>Get a Quote</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
           </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="desktop-nav" aria-label="Main Navigation">
+            <ul className="nav-list">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className={`nav-link ${isActive ? 'active' : ''}`}
+                      aria-current={isActive ? 'page' : undefined}
+                    >
+                      <span>{link.label}</span>
+                      {isActive && <span className="active-dot"></span>}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          {/* Desktop Action: Get a Quote */}
+          <div className="header-actions">
+            <Link
+              href="/contact"
+              className="btn btn-primary btn-header"
+            >
+              <span>Get a Quote</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </Link>
+          </div>
+
+          {/* Mobile Hamburger Toggle */}
+          <button
+            type="button"
+            className="mobile-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          >
+            <span className={`hamburger-bar ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-bar ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-bar ${mobileMenuOpen ? 'open' : ''}`}></span>
+          </button>
         </div>
+      </header>
 
-        {/* Mobile Hamburger Toggle */}
-        <button
-          type="button"
-          className="mobile-toggle"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-expanded={mobileMenuOpen}
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-        >
-          <span className={`hamburger-bar ${mobileMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-bar ${mobileMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-bar ${mobileMenuOpen ? 'open' : ''}`}></span>
-        </button>
-      </div>
+      {/* Mobile Drawer Backdrop (Rendered outside header to escape backdrop-filter containing block) */}
+      <div
+        className={`mobile-drawer-backdrop ${mobileMenuOpen ? 'is-open' : ''}`}
+        onClick={() => setMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
 
-      {/* Mobile Drawer */}
-      <div className={`mobile-drawer ${mobileMenuOpen ? 'is-open' : ''}`}>
+      {/* Mobile Drawer (Full Viewport Sibling of Header) */}
+      <div
+        className={`mobile-drawer ${mobileMenuOpen ? 'is-open' : ''}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Navigation Menu"
+      >
         <div className="mobile-drawer-content">
           <div className="mobile-drawer-header">
-            <span className="mobile-drawer-title">Navigation</span>
-            <span className="badge-pill-cyan" style={{ fontSize: '0.65rem', padding: '2px 8px' }}>NeoProcesses</span>
+            <div className="brand-lockup">
+              <img
+                src={assetPath('/images/neoprocesses_symbol.svg')}
+                alt="NeoProcesses Symbol"
+                width="30"
+                height="30"
+                className="logo-symbol-img"
+              />
+              <div className="brand-text-wrapper">
+                <span className="brand-name" style={{ fontSize: '1.1rem' }}>Neo<span className="brand-highlight">Processes</span></span>
+                <span className="brand-tagline" style={{ fontSize: '0.6rem' }}>Custom Software</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="mobile-drawer-close"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="18" height="18">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </div>
+
+          <span className="mobile-drawer-nav-label">Navigation Menu</span>
+
           <nav className="mobile-nav" aria-label="Mobile Navigation">
             <ul className="mobile-nav-list">
               {navLinks.map((link) => {
@@ -134,20 +173,29 @@ export default function Header() {
                       aria-current={isActive ? 'page' : undefined}
                     >
                       <span>{link.label}</span>
-                      {isActive && <span className="active-dot"></span>}
+                      {isActive ? (
+                        <span className="active-dot"></span>
+                      ) : (
+                        <span style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>→</span>
+                      )}
                     </Link>
                   </li>
                 );
               })}
             </ul>
           </nav>
+
           <div className="mobile-drawer-cta">
             <Link
               href="/contact"
               className="btn btn-primary btn-block"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Get a Quote &amp; Discuss
+              <span>Get a Quote &amp; Discuss</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </Link>
             <a
               href="https://wa.me/923265635826"
@@ -155,11 +203,15 @@ export default function Header() {
               rel="noopener noreferrer"
               className="btn btn-whatsapp btn-block"
             >
-              Chat on WhatsApp (+92 326 5635826)
+              <span>Chat on WhatsApp (+92 326 5635826)</span>
             </a>
+          </div>
+
+          <div className="mobile-drawer-footer">
+            <span>Direct Engineering Collaboration • PK &amp; KSA</span>
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
