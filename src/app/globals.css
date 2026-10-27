@@ -85,6 +85,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-deep);
   color: var(--text-primary);
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -96,10 +99,21 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
 }
 
-main {
+main, .homepage-wrapper {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
   flex: 1;
+}
+
+img, svg, video, iframe {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -3770,29 +3784,230 @@ button {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .site-header {
+    height: 68px;
+  }
+
+  .header-scrolled {
+    height: 64px;
+  }
+
+  .header-container {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+  }
+
+  .brand-lockup {
+    gap: 10px;
+  }
+
+  .logo-symbol-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.62rem;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
   .section-padding {
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .desktop-nav, .header-actions {
     display: none;
   }
 
-  .mobile-toggle {
-    display: flex;
+  .hero-enterprise {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    overflow: hidden;
+  }
+
+  .hero-copy-column {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-pill-badge {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    padding: 6px 12px;
+    white-space: normal;
+    text-align: left;
+    max-width: 100%;
+    line-height: 1.35;
+    margin-bottom: 18px;
   }
 
   .hero-headline {
-    font-size: 2.3rem;
+    font-size: 2.15rem;
+    line-height: 1.15;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 16px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 28px;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hero-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 35px;
+  }
+
+  .hero-cta-row .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-trust-metrics {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  .trust-metric-divider {
+    display: none;
+  }
+
+  .hero-mockup-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-top: 15px;
+  }
+
+  .hero-terminal-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  .terminal-header {
+    padding: 10px 14px;
+  }
+
+  .terminal-title {
+    font-size: 0.68rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 140px;
+  }
+
+  .terminal-body {
+    padding: 14px 12px;
+    gap: 12px;
+  }
+
+  .terminal-spec-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .flow-steps {
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-start;
+  }
+
+  .flow-step-node {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  .flow-connector {
+    display: none;
+  }
+
+  .terminal-metrics-box {
+    padding: 8px 10px;
+  }
+
+  .metric-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    font-size: 0.72rem;
+  }
+
+  .terminal-code-snippet {
+    padding: 10px;
+    overflow-x: auto;
+    max-width: 100%;
+    font-size: 0.68rem;
+  }
+
+  .terminal-code-snippet pre,
+  .terminal-code-snippet code {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-radial-glow {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .hero-radial-glow.top-right {
+    top: -50px;
+    right: 0;
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-radial-glow.bottom-left {
+    bottom: -50px;
+    left: 0;
+    width: 220px;
+    height: 220px;
   }
 
   .page-title {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
+    word-break: break-word;
   }
 
   .section-main-heading {
     font-size: 1.85rem;
+    word-break: break-word;
   }
 
   .expertise-grid-3, .projects-grid-3, .challenges-grid, .values-grid-7, .stages-timeline-grid, .faqs-grid-2, .standards-grid-4 {
@@ -3817,10 +4032,11 @@ button {
 
   .cta-headline {
     font-size: 1.85rem;
+    word-break: break-word;
   }
 
   .final-cta-card {
-    padding: 40px 20px;
+    padding: 35px 16px;
   }
 
   .ready-action-grid {
@@ -3844,26 +4060,19 @@ button {
 
 @media (max-width: 480px) {
   .hero-headline {
-    font-size: 1.95rem;
+    font-size: 1.8rem;
+    line-height: 1.18;
   }
 
-  .hero-trust-metrics {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .trust-metric-divider {
-    display: none;
-  }
-
-  .hero-cta-row {
-    flex-direction: column;
-    align-items: stretch;
+  .hero-pill-badge {
+    font-size: 0.68rem;
+    padding: 5px 10px;
   }
 
   .btn {
     width: 100%;
+    padding: 12px 16px;
+    font-size: 0.92rem;
   }
 
   .cta-button-group {
@@ -3872,6 +4081,16 @@ button {
 
   .modal-gallery-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-headline {
+    font-size: 1.55rem;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
   }
 }
 
